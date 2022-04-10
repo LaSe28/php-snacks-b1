@@ -60,17 +60,17 @@
       $age = $_GET['age'];
       $email = $_GET['email'];
       $pos_chiocciola = strpos($email, '@');
-      if (strlen($name) > 3) {
-        echo "<p>accesso autorizzato</p>";
-      } elseif (is_numeric($age)) {
-        echo "<p>accesso autorizzato</p>";
-      } elseif ($pos_chiocciola !== false && strpos($email, '.', $pos_chiocciola) !== false) {
-        echo "<p>accesso autorizzato</p>";
-      }; 
+      $name_length = strlen($name) > 3;
+      $mail_verified = $pos_chiocciola !== false && strpos($email, '.', $pos_chiocciola) !== false;
+      $age_isnumber = is_numeric($age);
+      if ($name_length && $mail_verified && $age_isnumber) {
+        echo 'sei autorizzato';
+      } else {
+        echo 'non sei autorizzato';
+      }
     }
 
   ?>
-<p>NON FUNZIONA BENE</p>
 <br><br>
 <p>SNACK 4********************************************************************************************************************************************************************</p>
 <?php 
