@@ -84,7 +84,6 @@ function random($min, $max, $length) {
       $array_numeri[] = $random_num;
     }
   };
-  var_dump($array_numeri);
   echo 'i numeri sono <br>';
   foreach ($array_numeri as $num){
     echo $num . "<br>";
