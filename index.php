@@ -61,9 +61,9 @@
       $email = $_GET['email'];
       $pos_chiocciola = strpos($email, '@');
       $name_length = strlen($name) > 3;
-      $mail_verified = $pos_chiocciola !== false && strpos($email, '.', $pos_chiocciola) !== false;
+      $emailValid = $pos_chiocciola !== false && strpos($email, '.', $pos_chiocciola) !== false;
       $age_isnumber = is_numeric($age);
-      if ($name_length && $mail_verified && $age_isnumber) {
+      if ($name_length && $emailValid && $age_isnumber) {
         echo 'sei autorizzato';
       } else {
         echo 'non sei autorizzato';
